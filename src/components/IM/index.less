@@ -1,0 +1,732 @@
+.chat-expert-evaluation-popover {
+    .ant-popover-inner {
+        border-radius: .5rem;
+
+        .ant-popover-inner-content {
+            padding: 1rem 1.25rem;
+
+            .evaluate-box {
+                width         : 12.5rem;
+                padding-bottom: 1rem;
+
+                .evaluate-title {
+                    font-size     : 1rem;
+                    font-family   : PingFangSC-Semibold, PingFang SC;
+                    font-weight   : 600;
+                    color         : rgba(51, 51, 51, 1);
+                    line-height   : 1.375rem;
+                    padding-bottom: .5625rem;
+                    border-bottom : .0625rem solid rgba(238, 238, 238, .8);
+                }
+
+                .evaluate-content {
+                    padding-top: 1rem;
+                    font-size  : .875rem;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color      : rgba(51, 51, 51, 1);
+                    line-height: 1.5rem;
+
+                    .evaluate-star {
+                        margin-left   : .625rem;
+                        vertical-align: top;
+                        width         : 1.5rem;
+                        height        : 1.5rem;
+                        cursor        : pointer;
+
+                        &.gray {
+                            filter: grayscale(100%);
+                        }
+                    }
+                }
+            }
+
+            .ant-popover-message-title {
+                padding: 0;
+            }
+
+            .ant-popover-buttons {
+                padding-bottom: .0625rem;
+
+                button:first-of-type {
+                    display: none;
+                }
+
+                button:last-of-type {
+                    width        : 100%;
+                    margin-left  : 0;
+                    border-radius: .25rem;
+                }
+            }
+        }
+    }
+}
+
+.nim {
+    min-height: 100%;
+
+    .clear {
+        clear: both;
+    }
+
+    .ant-layout-sider {
+        .login {
+            position: absolute;
+            bottom  : 0;
+        }
+    }
+
+    .ant-menu-inline {
+        .ant-menu-item {
+            position     : relative;
+            padding      : 1rem !important;
+            height       : 5rem;
+            line-height  : 5rem;
+            margin       : 0 !important;
+            border-bottom: .125rem solid #F5F5F5;
+
+            &::after {
+                border-right: 0rem solid #337aff;
+            }
+
+            .nav-avatar {
+                display       : inline-block;
+                vertical-align: top;
+                width         : 3rem;
+                height        : 3rem;
+                border-radius : 50%;
+            }
+
+            .nav-info {
+                display     : inline-block;
+                width       : calc(100% - 3rem);
+                height      : 3rem;
+                padding-left: .75rem;
+
+                .nav-name {
+                    width         : calc(100% - 2.5rem);
+                    float         : left;
+                    font-size     : 1.125rem;
+                    line-height   : 1.5625rem;
+                    font-family   : PingFangSC-Medium, PingFang SC;
+                    font-weight   : 500;
+                    color         : rgba(51, 51, 51, 1);
+                    letter-spacing: .0625rem;
+                    text-overflow : ellipsis;
+                    overflow      : hidden;
+                }
+
+                .nav-time {
+                    float      : right;
+                    width      : 2.5rem;
+                    line-height: 1.5625rem;
+                    font-size  : .8125rem;
+                    text-align : right;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color      : rgba(204, 204, 204, 1);
+                }
+
+                .nav-text {
+                    width        : calc(100% - 2.5rem);
+                    padding-top  : .0625rem;
+                    float        : left;
+                    font-size    : .875rem;
+                    font-family  : PingFangSC-Regular, PingFang SC;
+                    font-weight  : 400;
+                    color        : rgba(153, 153, 153, 1);
+                    line-height  : 1.25rem;
+                    text-overflow: ellipsis;
+                    overflow     : hidden;
+                }
+
+                .nav-unread {
+                    float        : right;
+                    margin-top   : .1875rem;
+                    padding      : 0 .1875rem;
+                    width        : auto;
+                    line-height  : 1rem;
+                    font-size    : .75rem;
+                    font-family  : PingFangSC-Regular, PingFang SC;
+                    font-weight  : 400;
+                    color        : rgba(255, 255, 255, 1);
+                    background   : rgba(235, 16, 49, 1);
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        .ant-menu-item-selected {
+            // color           : #333333;
+            background-color   : #F9F9F9 !important;
+        }
+    }
+
+    .chat-box {
+        position        : relative;
+        width           : 100%;
+        background-color: #F5F5F5;
+
+        .case-info {
+            overflow: auto;
+            height  : 100%;
+            position: absolute;
+            left    : -17.5rem;
+            z-index : 101;
+
+            .case-header {
+                padding      : 1rem 1rem .75rem 1rem;
+                border-bottom: 1px solid rgba(238, 238, 238, 1);
+
+                button {
+                    display      : block;
+                    width        : 100%;
+                    font-size    : .875rem;
+                    font-family  : PingFangSC-Regular, PingFang SC;
+                    font-weight  : 400;
+                    line-height  : 2rem;
+                    border-radius: .25rem;
+                    border       : 0;
+                    padding      : 0;
+                    text-shadow  : none;
+                    box-shadow   : none;
+                }
+
+                .case-back {
+                    background   : rgba(238, 238, 238, 1);
+                    color        : rgba(27, 40, 87, 1);
+                    margin-bottom: .5rem;
+                }
+
+                .case-save {
+                    display: block;
+                    color  : rgba(255, 255, 255, 1);
+                }
+            }
+
+
+            .case-form {
+                padding: 1rem;
+
+                .form-title {
+                    font-size     : 1.125rem;
+                    font-family   : PingFangSC-Medium, PingFang SC;
+                    font-weight   : 500;
+                    color         : rgba(51, 51, 51, 1);
+                    line-height   : 1.5625rem;
+                    letter-spacing: .0625rem;
+                    margin-bottom : .25rem;
+                }
+
+                .form-title-2 {
+                    font-size    : .75rem;
+                    font-family  : PingFangSC-Regular, PingFang SC;
+                    font-weight  : 400;
+                    color        : rgba(153, 153, 153, 1);
+                    line-height  : 1.0625rem;
+                    margin-bottom: .25rem;
+                }
+
+                .form-title-3,
+                .form-title-4 {
+                    font-size    : .875rem;
+                    font-family  : PingFangSC-Medium, PingFang SC;
+                    font-weight  : 500;
+                    color        : rgba(51, 51, 51, 1);
+                    line-height  : 1.25rem;
+                    margin-top   : .25rem;
+                    margin-bottom: 1.25rem;
+                }
+
+                .form-title-4 {
+                    margin-top   : .75rem;
+                    margin-bottom: 0;
+                    float        : left;
+                }
+
+                .file-download {
+                    margin-top   : .875rem;
+                    margin-bottom: 0;
+                    font-size    : .8125rem;
+                    font-family  : PingFangSC-Regular, PingFang SC;
+                    font-weight  : 400;
+                    color        : rgba(51, 122, 255, 1);
+                    line-height  : 1.125rem;
+                    float        : right;
+                    cursor       : pointer;
+                }
+
+                .ant-row {
+                    margin: .25rem 0;
+
+                    label {
+                        font-size    : .8125rem;
+                        font-family  : PingFangSC-Regular, PingFang SC;
+                        font-weight  : 400;
+                        color        : rgba(153, 153, 153, 1);
+                        line-height  : 1.125rem;
+                        height       : 1.125rem;
+                        margin-bottom: .25rem;
+
+                        &::before,
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    textarea {
+                        resize: none;
+                    }
+                }
+
+                .file-item {
+                    margin-top: .5rem;
+                    width     : 100%;
+
+                    .file-box {
+                        position     : relative;
+                        width        : 100%;
+                        height       : 3.75rem;
+                        border       : 1px solid rgba(238, 238, 238, 1);
+                        border-radius: .25rem;
+                        padding      : .75rem .25rem .75rem .75rem;
+                        display      : flex;
+                        cursor       : pointer;
+
+                        .file-icon {
+                            flex        : 0 0 1.5rem;
+                            width       : 1.5rem;
+                            height      : 1.5rem;
+                            margin-top  : .3125rem;
+                            margin-right: 0.75rem;
+                        }
+
+                        .file-name {
+                            font-size    : .8125rem;
+                            font-family  : PingFangSC-Regular, PingFang SC;
+                            font-weight  : 400;
+                            color        : rgba(51, 51, 51, 1);
+                            line-height  : 1.125rem;
+                            overflow     : hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .file-add {
+                            margin: 0 auto;
+                        }
+
+                        .add-file {
+                            z-index  : 101;
+                            position : absolute;
+                            display  : inline-block;
+                            left     : 0;
+                            top      : 0;
+                            width    : 100%;
+                            height   : 100%;
+                            opacity  : 0;
+                            font-size: 0;
+                            cursor   : pointer;
+                        }
+                    }
+
+                    .file-tool {
+                        font-size  : .75rem;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color      : rgba(153, 153, 153, 1);
+                        line-height: 1.0625rem;
+                        margin-top : .25rem;
+                        margin-left: 1rem;
+                        float      : right;
+                        cursor     : pointer;
+
+                        img {
+                            width       : 1rem;
+                            height      : 1rem;
+                            margin-right: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .chat-main {
+            display  : flex;
+            flex-flow: column;
+            height   : 100%;
+
+            .chat-title {
+                flex         : 1 0 auto;
+                position     : relative;
+                width        : 100%;
+                min-height   : 5rem;
+                border-bottom: .0625rem solid rgba(238, 238, 238, 1);
+
+                .chat-expert {
+                    position: absolute;
+                    top     : 1.0625rem;
+                    left    : 1.25rem;
+
+                    .expert-name {
+                        vertical-align: top;
+                        padding-right : 1rem;
+                        width         : auto;
+                        height        : 1.5625rem;
+                        font-size     : 1.125rem;
+                        font-family   : PingFangSC-Medium, PingFang SC;
+                        font-weight   : 500;
+                        color         : rgba(51, 51, 51, 1);
+                        line-height   : 1.5625rem;
+                        letter-spacing: .0625rem;
+                    }
+
+                    .expert-evaluate {
+                        vertical-align: top;
+                        width         : 1.5rem;
+                        height        : 1.5rem;
+                        cursor        : pointer;
+                    }
+                }
+
+                .expert-info {
+                    position   : absolute;
+                    top        : 2.625rem;
+                    left       : 1.25rem;
+                    height     : 1.25rem;
+                    font-size  : .875rem;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color      : rgba(153, 153, 153, 1);
+                    line-height: 1.25rem;
+                    cursor     : pointer;
+                }
+
+                .expert-order {
+                    position       : absolute;
+                    top            : 1.8125rem;
+                    right          : 8.625rem;
+                    height         : 1.375rem;
+                    font-size      : 1rem;
+                    font-family    : PingFangSC-Regular, PingFang SC;
+                    font-weight    : 400;
+                    color          : rgba(51, 51, 51, 1);
+                    line-height    : 1.375rem;
+                    text-decoration: underline;
+                    cursor         : pointer;
+                }
+
+                .expert-case {
+                    position       : absolute;
+                    top            : 1.8125rem;
+                    right          : 2.625rem;
+                    height         : 1.375rem;
+                    font-size      : 1rem;
+                    font-family    : PingFangSC-Regular, PingFang SC;
+                    font-weight    : 400;
+                    color          : rgba(51, 51, 51, 1);
+                    line-height    : 1.375rem;
+                    text-decoration: underline;
+                    cursor         : pointer;
+                }
+
+                .order-form {
+                    margin: 4rem 1.25rem 0 1.25rem;
+
+                    .ant-row {
+                        margin-bottom: 0;
+
+                        input {
+                            width: 100%;
+                        }
+
+                        .save-order {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .chat-list {
+                flex       : 0 1 auto;
+                height     : 100%;
+                margin     : 0;
+                // padding : 0 5.25rem;
+                // overflow: auto;
+
+                li {
+                    list-style: none;
+                }
+
+                .item-time,
+                .item-more {
+                    font-size : 0.8rem;
+                    text-align: center;
+                    color     : #cccccc;
+
+                    div {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                @headSize: 3rem;
+
+                .item-me {
+                    .msg-box {
+                        margin-right: 5.25rem;
+                        margin-left : 20%;
+
+                        .msg-head {
+                            right: -4rem;
+                        }
+
+                        .msg-name {
+                            right: 0;
+                        }
+
+                        .msg-content {
+                            background: rgba(27, 40, 87, 1);
+                            float     : right;
+
+                            .msg-text,
+                            .msg-text-translate {
+                                color: #FFFFFF;
+                            }
+                        }
+
+                        .msg-failed {
+                            position: absolute;
+                            left    : -3rem;
+                            bottom  : 0rem;
+                        }
+
+                        .msg-unread {
+                            position : absolute;
+                            left     : -3rem;
+                            bottom   : 0rem;
+                            font-size: 1rem;
+                            color    : #1B2857;
+
+                            &.read {
+                                color: rgba(170, 170, 170, 1);
+                            }
+                        }
+                    }
+                }
+
+                .item-you {
+                    .msg-box {
+                        margin-left : 5.25rem;
+                        margin-right: 20%;
+                    }
+
+                    .msg-head {
+                        left: -4rem;
+                    }
+
+                    .msg-name {
+                        left: 0;
+                    }
+
+                    .msg-content {
+                        float     : left;
+                        background: rgba(255, 255, 255, 1);
+                    }
+
+                    .msg-translate {
+                        float          : right;
+                        font-size      : 1rem;
+                        font-family    : PingFangSC-Regular, PingFang SC;
+                        font-weight    : 400;
+                        color          : rgba(170, 170, 170, 1);
+                        line-height    : 1rem;
+                        text-decoration: underline;
+                        cursor         : pointer;
+                    }
+                }
+
+                .item-me,
+                .item-you {
+                    .msg-box {
+                        width      : calc(80% - 5.25rem);
+                        position   : relative;
+                        padding-top: 3.125rem;
+
+                        .msg-head {
+                            position: absolute;
+                            top     : 1rem;
+
+                            &.pointer img {
+                                cursor: pointer;
+                            }
+
+                            img {
+                                width        : @headSize;
+                                height       : @headSize;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .msg-name {
+                            position      : absolute;
+                            top           : 1rem;
+                            width         : auto;
+                            height        : 1.5625rem;
+                            font-size     : 1.125rem;
+                            font-family   : PingFangSC-Medium, PingFang SC;
+                            font-weight   : 500;
+                            color         : rgba(51, 51, 51, 1);
+                            line-height   : 1.5625rem;
+                            letter-spacing: .0625rem;
+                        }
+
+                        .msg-content {
+                            position     : relative;
+                            width        : auto;
+                            max-width    : 100%;
+                            border-radius: 10px;
+                            padding      : 1rem;
+
+                            .msg-text {
+                                min-width: 8rem;
+                                word-wrap: break-word;
+
+                                &.msg-image {
+                                    min-width: 0;
+
+                                    img {
+                                        width : 100%;
+                                        height: 100%;
+                                    }
+                                }
+
+                            }
+
+                            .msg-text-translate {
+                                word-wrap: break-word;
+
+                                &::before {
+                                    content          : '';
+                                    display          : block;
+                                    width            : 100%;
+                                    height           : .0625rem;
+                                    margin-top       : 1rem;
+                                    margin-bottom    : 1rem;
+                                    background       : linear-gradient(to right, #979797, #979797 50%, transparent 0, transparent);
+                                    background-size  : 1rem 1px;
+                                    background-repeat: repeat-x;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+            .chat-editor {
+                flex     : 1 0 13.5625rem;
+                display  : flex;
+                flex-flow: column;
+                position : relative;
+
+                .editor-tools {
+                    flex   : 0 0 3.5rem;
+                    width  : 100%;
+                    padding: 1rem 1.5rem;
+
+                    .editor-tool {
+                        position    : relative;
+                        width       : 1.5rem;
+                        height      : 1.5rem;
+                        margin-right: 1rem;
+                        cursor      : pointer;
+
+                        .icon-img {
+                            width : inherit;
+                            height: inherit;
+
+                            img {
+                                width         : inherit;
+                                height        : inherit;
+                                vertical-align: top;
+
+                            }
+                        }
+
+                        .editor-file {
+                            z-index  : 101;
+                            position : absolute;
+                            display  : inline-block;
+                            left     : 0;
+                            top      : 0;
+                            width    : inherit;
+                            height   : inherit;
+                            opacity  : 0;
+                            font-size: 0;
+                            cursor   : pointer;
+                        }
+
+                    }
+                }
+
+                .editor-input {
+                    flex          : 1;
+                    vertical-align: top;
+                    padding       : 0 10rem 1.5rem 1.5rem;
+                    font-size     : 1rem;
+                    width         : 100%;
+                    height        : 100%;
+                    // 去掉样式
+                    outline         : none;
+                    resize          : none;
+                    border          : 0;
+                    background-color: transparent;
+
+                    // 修改提示信息样式
+                    &::-webkit-input-placeholder {
+                        /* WebKit browsers */
+                        color      : #9c9c9c;
+                        line-height: 2rem;
+                    }
+
+                    &:-moz-placeholder {
+                        /* Mozilla Firefox 4 to 18 */
+                        color      : #9c9c9c;
+                        line-height: 2rem;
+                    }
+
+                    &::-moz-placeholder {
+                        /* Mozilla Firefox 19+ */
+                        color      : #9c9c9c;
+                        line-height: 2rem;
+                    }
+
+                    &::-ms-input-placeholder {
+                        /* Internet Explorer 10+ */
+                        color      : #9c9c9c;
+                        line-height: 2rem;
+                    }
+                }
+
+                .editor-send {
+                    position     : absolute;
+                    right        : 2rem;
+                    bottom       : 1.5rem;
+                    width        : 6rem;
+                    height       : 2.5rem;
+                    background   : rgba(255, 255, 255, 1);
+                    border-radius: .25rem;
+                    border       : .0625rem solid rgba(221, 221, 221, 1);
+                    line-height  : 2.5rem;
+                    text-align   : center;
+                    font-size    : 1rem;
+                    font-family  : PingFangSC-Regular, PingFang SC;
+                    font-weight  : 400;
+                    color        : rgba(153, 153, 153, 1);
+                    cursor       : pointer;
+                }
+            }
+        }
+
+    }
+}
